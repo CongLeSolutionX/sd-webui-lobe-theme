@@ -15,19 +15,15 @@ class LobeLocale:
 
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
-                language_data = json.load(f)
-                return language_data
+                return json.load(f)
         except FileNotFoundError:
             return None
 
     def get_language_file(self, lng: str):
-        language_data = self.load_language_file(lng)
-
-        if language_data:
+        if language_data := self.load_language_file(lng):
             return language_data
-        else:
-            LobeLog.debug(f"Language file not found")
-            return {"error": "Language file not found"}
+        LobeLog.debug("Language file not found")
+        return {"error": "Language file not found"}
     @staticmethod
     def default():
         return {'empty': True}

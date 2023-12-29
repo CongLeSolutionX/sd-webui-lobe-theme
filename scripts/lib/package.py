@@ -20,12 +20,12 @@ class LobePackage:
 
     def load_package(self):
         if os.path.exists(self.package_file):
-            LobeLog.debug(f"Loading package from package.json")
+            LobeLog.debug("Loading package from package.json")
 
             with open(self.package_file, 'r') as f:
                 self.package = json.load(f)
         else:
-            LobeLog.debug(f"Package file not found")
+            LobeLog.debug("Package file not found")
             self.package = {"error": "Package file not found"}
 
     def is_empty(self):
