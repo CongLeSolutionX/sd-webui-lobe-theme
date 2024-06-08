@@ -15,7 +15,6 @@ class LobeApi:
         self.prompt = prompt
         self.config = config
         self.locale = locale
-        pass
 
     def create_api_route(self, app: FastAPI):
 

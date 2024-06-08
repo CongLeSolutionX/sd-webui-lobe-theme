@@ -25,7 +25,7 @@ class LobeConfig:
             with open(self.config_file, 'r') as f:
                 self.config = json.load(f)
         else:
-            LobeLog.debug(f"Config file not found")
+            LobeLog.debug("Config file not found")
             self.config = LobeConfig.default()
 
     def is_empty(self):
